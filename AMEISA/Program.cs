@@ -30,6 +30,14 @@ namespace AMEISA
             Console.WriteLine(output);
             output = "Luis".Equals("luiz", StringComparison.CurrentCultureIgnoreCase);
             Console.WriteLine(output);
+            Console.WriteLine(output);
+            Console.WriteLine(output);
+            Console.WriteLine(output);
+            Console.WriteLine(output);
+
+
+
+
 
 
 
