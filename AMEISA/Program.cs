@@ -7,9 +7,6 @@ namespace AMEISA
 {
     class Program
     {
-        List<EpitopeDTO> lstEpi = new List<EpitopeDTO>();
-        List<SequenceTranslationDTO> lstTrans = new List<SequenceTranslationDTO>();
-        EpitopeDAO epitopeDAO = new EpitopeDAO();
         static void Main(string[] args)
         {
 
@@ -25,17 +22,20 @@ namespace AMEISA
             EpitopeDAO epitopeDAO = new EpitopeDAO();
             TranslationsDAO translationsDAO = new TranslationsDAO();
             lstEpi = epitopeDAO.Epitopes();
-            //lstTrans = translationsDAO.
-
+            lstTrans = translationsDAO.Listar();
+            int contador = 0;
 
             foreach (EpitopeDTO item in lstEpi)
             {
-                lstTrans = translationsDAO.Listar(item.IdEpitope, string.Empty);
                 foreach (SequenceTranslationDTO item2 in lstTrans)
                 {
-                    if (item.LinearSequence == item2.Translation)
+                    for (int i = 0; i < item.LinearSequence.Length; i++)
                     {
-
+                        if (item2.Translation.Contains(item.LinearSequence[i].ToString()))
+                        {
+                            contador++;
+                            Console.WriteLine(item.LinearSequence[i]);
+                        }
                     }
                 }
             }

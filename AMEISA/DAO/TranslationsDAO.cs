@@ -15,7 +15,7 @@ namespace AMEISA.DAO
         public string mensagem = string.Empty;
 
 
-        public List<SequenceTranslationDTO> Listar(int idOrganism, String orderby)
+        public List<SequenceTranslationDTO> Listar()
         {
 
             StringBuilder sb = new StringBuilder();
@@ -26,11 +26,6 @@ namespace AMEISA.DAO
             sb.AppendLine("JOIN saga.sequence_feature ON feature_qualifier.idsequence_feature = sequence_feature.id");
             sb.AppendLine("JOIN saga.sequence ON sequence_feature.idsequence = sequence.id");
             sb.AppendLine("WHERE feature_qualifier.name='translation'");
-            sb.AppendLine("  AND sequence.idorganism =" + idOrganism);
-            if (!orderby.Equals(""))
-            {
-                sb.AppendLine(" ORDER BY " + orderby);
-            }
             try
             {
                 //Abrir Conexao
