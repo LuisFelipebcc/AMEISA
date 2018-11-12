@@ -25,7 +25,7 @@ namespace AMEISA.DAO
             sb.AppendLine("FROM saga.feature_qualifier");
             sb.AppendLine("JOIN saga.sequence_feature ON feature_qualifier.idsequence_feature = sequence_feature.id");
             sb.AppendLine("JOIN saga.sequence ON sequence_feature.idsequence = sequence.id");
-            sb.AppendLine("WHERE feature_qualifier.name='translation'");
+            sb.AppendLine("WHERE feature_qualifier.name='translation' limit 20");
             try
             {
                 //Abrir Conexao

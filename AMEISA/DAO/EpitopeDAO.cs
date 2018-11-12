@@ -13,7 +13,7 @@ namespace AMEISA.DAO
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("SELECT epitopeid,linearsequence FROM saga.epitope");
+            sb.AppendLine("SELECT epitopeid,linearsequence FROM saga.epitope limit 60");
 
             try
             {
