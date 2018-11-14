@@ -9,7 +9,17 @@ namespace AMEISA
     {
         static void Main(string[] args)
         {
-            var str = "Luis Felipe da Silva Sousa";
+            string str = "Vai tomar no cu";
+            string stn = "mar";
+
+            char[] text1 = str.ToCharArray();
+            char[] text2 = stn.ToCharArray();
+
+            for (int i = 0; i < text1.Length; i++)
+            {
+
+            }
+
             Console.Write(str.IndexOf("uis"));
 
             //compararStrs();
@@ -17,7 +27,7 @@ namespace AMEISA
             Console.Read();
         }
 
-        private static void compararStrs()
+        private static void CompararStrs()
         {
             List<EpitopeDTO> lstEpi = new List<EpitopeDTO>();
             List<SequenceTranslationDTO> lstTrans = new List<SequenceTranslationDTO>();
@@ -43,56 +53,57 @@ namespace AMEISA
                         {
                             Console.WriteLine("Imprementar para verificar se não validar posições");
                         }
-                        item2.Translation.IndexOf(item.LinearSequence));
+                        //item2.Translation.IndexOf(item.LinearSequence));
 
-                    //if (item2.Translation.IndexOf(item.LinearSequence[i].ToString()) > 0)
-                    //if (item2.Translation.Contains(item.LinearSequence[i].ToString()))
-                    //{
-                    //    contador++;
-                    //    Console.Write(item.LinearSequence[i]);
-                    //}
+                        //if (item2.Translation.IndexOf(item.LinearSequence[i].ToString()) > 0)
+                        //if (item2.Translation.Contains(item.LinearSequence[i].ToString()))
+                        //{
+                        //    contador++;
+                        //    Console.Write(item.LinearSequence[i]);
+                        //}
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+
+
+
+
+
+                //foreach (EpitopeDTO item in lstEpi)
+                //{
+                //    foreach (SequenceTranslationDTO item2 in lstTrans)
+                //    {
+                //        contador = 0;
+                //        int i = 0;
+                //        while (contador <= 2 || i < item.LinearSequence.Length)
+                //        {
+                //            if (!item2.Translation.Contains(item.LinearSequence[i].ToString()))
+                //            {
+                //                contador++;
+                //            }
+                //            i++;
+                //        }
+                //        if (contador == 0)
+                //        {
+
+                //        }
+                //        else if (contador == 1)
+                //        {
+
+                //        }
+                //        else
+                //        {
+
+                //        }
+
+                //        Console.Write("  Tamanho Total: " + item.LinearSequence.Length + " Encontrados: " + contador);
+                //        Console.WriteLine();
+                //    }
+                //}
+
+                Console.Read();
             }
-
-
-
-
-
-            //foreach (EpitopeDTO item in lstEpi)
-            //{
-            //    foreach (SequenceTranslationDTO item2 in lstTrans)
-            //    {
-            //        contador = 0;
-            //        int i = 0;
-            //        while (contador <= 2 || i < item.LinearSequence.Length)
-            //        {
-            //            if (!item2.Translation.Contains(item.LinearSequence[i].ToString()))
-            //            {
-            //                contador++;
-            //            }
-            //            i++;
-            //        }
-            //        if (contador == 0)
-            //        {
-
-            //        }
-            //        else if (contador == 1)
-            //        {
-
-            //        }
-            //        else
-            //        {
-
-            //        }
-
-            //        Console.Write("  Tamanho Total: " + item.LinearSequence.Length + " Encontrados: " + contador);
-            //        Console.WriteLine();
-            //    }
-            //}
-
-            Console.Read();
         }
-    }
 
+    }
 }
