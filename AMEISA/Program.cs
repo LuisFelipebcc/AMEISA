@@ -7,20 +7,57 @@ namespace AMEISA
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             string str = "Vai tomar no cu";
             string stn = "mar";
-
+            int like = 0;
+            List<int> rank = new List<int>();
             char[] text1 = str.ToCharArray();
             char[] text2 = stn.ToCharArray();
-
+            bool pri = true;
+            int inc = 0;
             for (int i = 0; i < text1.Length; i++)
             {
+                int x = inc;
+                for (int j = 0; j < text2.Length; j++)
+                {
 
+                    if (pri)
+                    {
+                        if (text1[j] == text2[j])
+                        {
+                            like++;
+                        }
+                    }
+                    else
+                    {
+                        if (x <= text1.Length -1)
+                        {
+                            if (text1[x] == text2[j])
+                            {
+                                like++;
+                            }
+                           
+                        }
+                        x++;
+                    }
+
+                }
+                rank.Add(like);
+                like = 0;
+                pri = false;
+                inc++;
             }
 
-            Console.Write(str.IndexOf("uis"));
+            foreach (var item in rank)
+            {
+                Console.Write(item);
+            }
+
+            
 
             //compararStrs();
 
