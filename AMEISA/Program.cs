@@ -2,65 +2,79 @@
 using AMEISA.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AMEISA
 {
     class Program
     {
-
+        int like = 0;
+        List<int> rank = new List<int>();
 
         static void Main(string[] args)
         {
-            string str = "Vai tomar no cu";
-            string stn = "mar";
+            string str = "MNNQRKKTARPSFNMLKRARNRVSTVSQLAKRFSKGLLSGQGPMKLVMAFIAFLRFLAIPPTAGILARWGSFKKNGAIKVLRGFKKEISSMLNIMNRRKRSVTMLLMLMPTALAFHLTTRGGEPHMIVSKQERGKSLLFKTSAGVNMCTLIAMDLGELCEDTMTYKCPRITEAEPDDVDCWCNATDTWVTYGTCSQTGEHRRDKRSVALAPHVGLGLETRTETWMSSEGAWKQIQRVETWALRHPGFTVIALFLAHAIGTSITQKGIIFILLMLVTPSMAMRCVGIGSRDFVEGLSGATWVDVVLEHGSCVTTMAKDKPTLDIELLKTEVTNPAVLRKLCIEAKISNTTTDSRCPTQGEATLVEEQDANFVCRRTFVDRGWGNGCGLFGKGSLITCAKFKCVTKLEGKIVQYENLKYSVIVTVHTGDQHQVGNESTEHGTTATITPQAPTTEIQLTDYGALTLDCSPRTGLDFNEMVLLTMKEKSWLVHKQWFLDLPLPWTSGASTSQETWNRQDLLVTFKTAHAKKQEVVVLGSQEGAMHTALTGATEIQTSGTTTIFAGHLKCRLKMDKLTLKGMSYVMCTGSFKLEKEVAETQHGTVLVQIKYEGTDAPCKIPFSTQDEKGVTQNGRLITANPIVTDKEKPVNIEAEPPFGESHIVIGAGEKALKLSWFKKGSSIGKMFEATARGARRMAILGDTAWDFGSIGGVFTSVGKLVHQIFGTAYGVLFSGVSWTMKIGIGVLLTWLGLNSRSTSLSMTCIAVGLVTLYLGVMVQADSGCVINWKGRELKCGSGIFVTNEVHTWTEQYKFQADSPKRLSAAIGKAWEEGVCGIRSATRLENIMWKQISNELNHILLENDMKFTVVVGDVAGILAQGKKMISPQPMEHKYSWKSWGKAKIIGADVQNTTFIIDGPNTPECPDDQRAWNIWEVEDYGFGIFTTNIWLKLRDSYTQVCDHRLMSAAIKDSKAVHADMGYWIESEKNETWKLARASFIEVKTCIWPKSHTLWSNGVLESEMIIPKIYGGPISQHNYRPGYFTQTAGPWHLGKLELDFDLCEGTTVVVDEHCGSRGPSLRTTTVTGKIIHEWCCRSCTLPPLRFRGEDGCWYGMEIRPVKEKEENLVKSMVSAGSGEVDSFSLGLLCISIMIEEVMRSRWSRKMLMTGTLAVFFLLIMGQLTWNDLIRLCIMVGANASDRMGMGTTYLALMATFKMRPMFAVGLLFRRLTSREVLLLTIGLSLVASVELPNSLEELGDGLAMGIMILKLLTDFQSHQLWATLLSLTFIKTTFSLHYAWKTVAMVLSIVSLFPLCLSTTSQKTTWLPVLLGSLGCKPLTMFLIAENKIWGRKSWPLNEGIMAVGIVSILLSSLLKNDVPLAGPLIAGGMLIACYDMSGSSADLSLEKAAEVSWEEEAEHSGASHNILVEVQDDGTMKIKDEERDDTLTILLKATLLAISGVYPLSIPATLFVWYFWQKKKQRSGVLWDTPSPPEVERAVLDDGIYRIMQRGLLGRSQVGVGVFQENVFHTMWHVTRGAVLMYQGKRLEPSWASVKKDLISYGGGWRLQGSWNTGEEVQVIAVEPGKNPKNVQTAPGTFKTPEGEVGAIALDFKPGTSGSPIVNREGKIVGLYGNGVVTTSGTYVSAIAQAKASQEGPLPEIEDEVFRKRNLTIMDLHPGSGKTRRYLPAIVREAIKRKLRTLILAPTRVVASEMAEALKGMPIRYQTTAVKSEHTGKEIVDLMCHATFTMRLLSPVRVPNYNMIIMDEAHFTDPSSIAARGYISTRVGMGEAAAIFMTATPPGSVEAFPQSNAVIQDEERDIPERSWNSGYEWITDFPGKTVWFVPSIKSGNDIANCLRKNGKRVIQLSRKTFDTEYQKTKNNDWDYVVTTDISEMGANFRADRVIDPRRCLKPVILKDGPERVILAGPMPVTVASAAQRRGRIGRNHNKEGDQYIYMGQPLNNDEDHAHWTEAKMLLDNINTPEGIIPALFEPEREKSAAIDGEYRLRGEARKTFVELMRRGDLPVWLSYKVASEGFQYSDRRWCFDGERNNQVLEENMDVEIWTKEGERKKLRPRWLDARTYSDPLALREFKEFAAGRRSVSGDLILEIGKLPQHLTQRAQNALDNLVMLHNSEQGGRAYRHAMEELPDTIETLMLLALIAVLTGGVTLFFLSGRGLGKTSIGLLCVMASSVLLWMASVEPHWIAASIILEFFLMVLLIPEPDRQRTPQDNQLAYVVIGLLFMILTVAANEMGLLETTKKDLGIGHVAVENHHHATMLDVDLHPASAWTLYAVATTIITPMMRHTIENTTANISLTAIANQAAILMGLDKGWPISKMDIGVPLLALGCYSQVNPLTLTAAVLMLVAHYAIIGPGLQAKATREAQKRTAAGIMKNPTVDGIVAIDLDPVVYDAKFEKQLGQIMLLILCTSQILLMRTTWALCESITLATGPLTTLWEGSPGKFRNTTIAVSMANIFRGSYLAGAGLAFSLMKSLGGGRRGTGAQGETLGEKWKRQLNQLSKSEFNTYKRSGIMEVDRSEAKEGLKRGETTKHAVSRGTAKLRWFVERNLVKPEGKVIDLGCGRGGWSYYCAGLKKVTEVKGYTKGGPGHEEPIPMATYGWNLVKLYSGKDVFFIPPEKCDTLLCDIGESSPNPTIEEGRTLRVLKMVEPWLRGNQFCIKILNPYMPSEVETLEQMQRRHGGMLVRNPLSRNSTHEMYWVSCGTGNIVSAVNMTSRMLLNRFTMAHRKPTYERDVDLGAGTRHVAVEPEVANLDIIGQRIENIKHEHKSTWHYDEDNPYKTWAYHGSYEVKPSGSASSMVNGVVKLLTKPWDVIPMVTQIAMTDTTPFGQQRVFKEKVDTRTPKAKRGTAQIMEVTARWLWGFLSRNKKPRICTREEFTRKVRSNAAIGAVFIDENQWNSAKEAVEDERFWDLVHRERELHKQGKCATCVYNMMGKREKKLGEFGKAKGSRAIWYMWLGARFLEFEALGFMNEDHWFSRENSLSGVEGEGLHKLGYILRDISKIPGGNMYADDTAGWDTRITEDDLQNEAKITDIMEPEHALLAKAIFKLTYQNKVVRVQRPAKNGTVMDVISRRDQRGSGQVGTYGLNTFTNMEAQLIRQMESEGIFSPSELETPNLAERVLDWLEKYGVERLKRMAISGDDCVVKPIDDRFATALTALNDMGKVRKDIPQWEPSKGWNDWQQVPFCSHHFHQLIMKDGREIVVPCRNQDELVGRARVSQGAGWSLRETACLGKSYAQMWQLMYFHRRDLRLAANAICSAVPVDWVPTSRTTWSIHAHHQWMTTEDMLSVWNRVWIEENPWMEDKTHISSWEDVPYLGKREDQWCGSLIGLTARATWATNIQVAINQVRRLIGNENYLDYMTSMKRFKNESDPEGALW";
+            string stn = "QCETESYKQLVANVDKLEAL";
             int like = 0;
             List<int> rank = new List<int>();
             char[] text1 = str.ToCharArray();
             char[] text2 = stn.ToCharArray();
             bool pri = true;
-            int inc = 0;
-            for (int i = 0; i < text1.Length; i++)
+            char[] anterior = new char[2];
+
+            for (int y = 0; y < text2.Length; y++)
             {
-                int x = inc;
-                for (int j = 0; j < text2.Length; j++)
+                anterior[0] = text2[y];
+                text2[y] = '*';
+
+                for (int t = y + 1; t < text2.Length; t++)
                 {
+                    anterior[1] = text2[t];
+                    text2[t] = '*';
 
-                    if (pri)
+                    for (int i = 0; i < text1.Length; i++)
                     {
-                        if (text1[j] == text2[j])
+                        int x = i;
+                        for (int j = 0; j < text2.Length; j++)
                         {
-                            like++;
-                        }
-                    }
-                    else
-                    {
-                        if (x <= text1.Length -1)
-                        {
-                            if (text1[x] == text2[j])
+                            Console.Write(text2[j].ToString());
+                            if (pri)
                             {
-                                like++;
+                                if (text2[j] != '*')
+
+                                    if (text1[j] == text2[j])
+                                    {
+                                        like++;
+                                    }
                             }
-                           
+                            else
+                            {
+                                if (x <= text1.Length - 1)
+                                {
+                                    if (text2[j] != '*')
+                                        if (text1[x] == text2[j])
+                                        {
+                                            like++;
+                                        }
+                                }
+                                x++;
+                            }
                         }
-                        x++;
+                        Console.WriteLine();
+                        rank.Add(like);
+                        like = 0;
+                        pri = false;
                     }
-
+                    text2[t] = anterior[1];
                 }
-                rank.Add(like);
-                like = 0;
-                pri = false;
-                inc++;
+                text2[y] = anterior[0];
             }
+            var list = rank.OrderByDescending(x => x);
 
-            foreach (var item in rank)
+            foreach (var item in list)
             {
                 Console.Write(item);
             }
-
-            
-
-            //compararStrs();
-
             Console.Read();
         }
 
@@ -139,6 +153,167 @@ namespace AMEISA
                 //}
 
                 Console.Read();
+            }
+        }
+        /// <summary>
+        /// Metodo faz a comparação sem levar em consideração alguma mutação 
+        /// </summary>
+        /// <param name="strMaior">Entrada do translation</param>
+        /// <param name="strMenor">Sequence do Epitopo</param>
+        public void SlideWindow(string strMaior, string strMenor)
+        {
+
+            string str = "Vai tomar no cu";
+            string stn = "mar";
+            int like = 0;
+            List<int> rank = new List<int>();
+            char[] text1 = str.ToCharArray();
+            char[] text2 = stn.ToCharArray();
+            bool pri = true;
+
+            for (int i = 0; i < text1.Length; i++)
+            {
+                int x = i;
+                for (int j = 0; j < text2.Length; j++)
+                {
+
+                    if (pri)
+                    {
+                        if (text1[j] == text2[j])
+                        {
+                            like++;
+                        }
+                    }
+                    else
+                    {
+                        if (x <= text1.Length - 1)
+                        {
+                            if (text1[x] == text2[j])
+                            {
+                                like++;
+                            }
+
+                        }
+                        x++;
+                    }
+                }
+                rank.Add(like);
+                like = 0;
+                pri = false;
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo faz a comparação levando em consideração uma mutação. 
+        /// </summary>
+        /// <param name="strMaior">Entrada do translation</param>
+        /// <param name="strMenor">Sequence do Epitopo</param>
+        public void CompararLevandoUmaAlteracao(string strMaior, string strMenor)
+        {
+            int like = 0;
+            List<int> rank = new List<int>();
+            char[] text1 = strMaior.ToCharArray();
+            char[] text2 = strMenor.ToCharArray();
+            bool pri = true;
+            char[] anterior = new char[2];
+
+            for (int t = 0 + 1; t < text2.Length; t++)
+            {
+                anterior[0] = text2[t];
+                text2[t] = '*';
+
+                for (int i = 0; i < text1.Length; i++)
+                {
+                    int x = i;
+                    for (int j = 0; j < text2.Length; j++)
+                    {
+                        Console.Write(text2[j].ToString());
+                        if (pri)
+                        {
+                            if (text2[j] != '*')
+
+                                if (text1[j] == text2[j])
+                                {
+                                    like++;
+                                }
+                        }
+                        else
+                        {
+                            if (x <= text1.Length - 1)
+                            {
+                                if (text2[j] != '*')
+                                    if (text1[x] == text2[j])
+                                    {
+                                        like++;
+                                    }
+                            }
+                            x++;
+                        }
+                    }
+                    Console.WriteLine();
+                    rank.Add(like);
+                    like = 0;
+                    pri = false;
+                }
+                text2[t] = anterior[0];
+            }
+        }
+
+        public void CompararDuasMutacoes(string strMaior, string strMenor)
+        {
+
+            char[] text1 = strMaior.ToCharArray();
+            char[] text2 = strMenor.ToCharArray();
+            bool pri = true;
+            char[] anterior = new char[2];
+
+            for (int y = 0; y < text2.Length; y++)
+            {
+                anterior[0] = text2[y];
+                text2[y] = '*';
+
+                for (int t = y + 1; t < text2.Length; t++)
+                {
+                    anterior[1] = text2[t];
+                    text2[t] = '*';
+
+                    for (int i = 0; i < text1.Length; i++)
+                    {
+                        int x = i;
+                        for (int j = 0; j < text2.Length; j++)
+                        {
+                            Console.Write(text2[j].ToString());
+                            if (pri)
+                            {
+                                if (text2[j] != '*')
+
+                                    if (text1[j] == text2[j])
+                                    {
+                                        like++;
+                                    }
+                            }
+                            else
+                            {
+                                if (x <= text1.Length - 1)
+                                {
+                                    if (text2[j] != '*')
+                                        if (text1[x] == text2[j])
+                                        {
+                                            like++;
+                                        }
+                                }
+                                x++;
+                            }
+                        }
+                        Console.WriteLine();
+                        rank.Add(like);
+                        like = 0;
+                        pri = false;
+                    }
+                    text2[t] = anterior[1];
+                }
+                text2[y] = anterior[0];
             }
         }
 
