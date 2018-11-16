@@ -17,11 +17,11 @@ namespace AMEISA.DAO
             {
                 //Abrir Conexao
                 AbrirConexao();
-                Cmd = new MySqlCommand("insert into Coordenador (IdEpitopo, IdTranslations, Sequencen) values(@v1, @v2, @v3)", Con);
+                Cmd = new MySqlCommand("insert into MapeamentoEpitopos (IdEpitopo, IdTranslations, Sequencen) values(@v1, @v2, @v3)", Con);
 
                 Cmd.Parameters.AddWithValue("@v1", ranqueEpitopos.IdEpitopo);
                 Cmd.Parameters.AddWithValue("@v2", ranqueEpitopos.IdTranslations);
-                Cmd.Parameters.AddWithValue("@v3", ranqueEpitopos.Sequencen);
+                Cmd.Parameters.AddWithValue("@v3", ranqueEpitopos.Pontuacao);
 
                 Cmd.ExecuteNonQuery(); //executada esse nosso metodo!
             }
