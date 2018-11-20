@@ -21,7 +21,7 @@ namespace AMEISA.DAO
 
                 Cmd.Parameters.AddWithValue("@v1", ranqueEpitopos.IdEpitopo);
                 Cmd.Parameters.AddWithValue("@v2", ranqueEpitopos.IdTranslations);
-                Cmd.Parameters.AddWithValue("@v3", ranqueEpitopos.Pontuacao);
+                Cmd.Parameters.AddWithValue("@v3", ranqueEpitopos.Hit);
 
                 Cmd.ExecuteNonQuery(); //executada esse nosso metodo!
             }

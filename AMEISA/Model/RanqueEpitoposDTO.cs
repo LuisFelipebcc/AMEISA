@@ -4,6 +4,6 @@
     {
         public int IdEpitopo { get; set; }
         public int IdTranslations { get; set; }
-        public int Pontuacao { get; set; }
+        public int Hit { get; set; }
     }
 }
