@@ -62,6 +62,7 @@
     <Compile Include="DAO\EpitopeDAO.cs" />
     <Compile Include="DAO\TranslationsDAO.cs" />
     <Compile Include="Model\EpitopeDTO.cs" />
+    <Compile Include="Model\ProporcaoMutacionalDTO.cs" />
     <Compile Include="Model\RanqueEpitoposDTO.cs" />
     <Compile Include="Model\SequenceTranslationDTO.cs" />
     <Compile Include="Program.cs" />
